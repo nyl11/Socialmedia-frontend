@@ -1,0 +1,410 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f1f1f1;
+  font-family: 'Poppins', Arial, sans-serif; /* Added fallback font */
+}
+
+/* Header */
+header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  max-width: 1400px; /* Consistent max-width */
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav a {
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.3s;
+  margin: 8px;
+}
+
+nav a:hover {
+  color: #007bff;
+}
+.logout button{
+  margin-left: 10px;
+  background: transparent;
+  color: black;
+}
+.logout button:hover{
+ cursor: pointer;
+  background: transparent;
+  color: red;
+}
+/* Pages wrapper */
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Home layout */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 10px;
+  min-height: 100vh;
+}
+
+.left-sidebar {
+background: #f1f1f1;
+  padding: 20px;
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between items */
+}
+
+.sidebar-item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-item a:hover {
+  background-color: #ddd;
+}
+
+.sidebar-item.active a {
+  font-weight: bold;
+ 
+}
+.post-details {
+  background: #ffffff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 70%;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+/* .post-details:hover {
+  transform: translateY(-4px);
+} */
+
+.post-details h4 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 24px;
+}
+
+.post-details p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+
+.vote-button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.3s;
+  color: #555;
+}
+
+.vote-button:hover:not(:disabled) {
+  transform: scale(1.1);
+  background: #f0f0f0;
+}
+
+.vote-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.voted-up {
+  color: green !important;
+}
+
+.voted-down {
+  color: red !important;
+}
+
+.votes button{
+  background: transparent;
+  color: #333; /* Set a visible default color */
+  font-size: 16px;
+  margin-right: 8px ;
+}
+
+.votes button:hover{
+  background: whitesmoke;
+  
+}
+.delete-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.delete-button:hover {
+  color: crimson;
+  transform: scale(1.1);
+}
+
+
+
+
+
+/* Login/Signup forms */
+.login,
+.signup {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif; /* Consistent font */
+}
+
+.login h3,
+.signup h3 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* General button */
+button {
+  padding: 0.75rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: green;
+  
+}
+
+.signup-btn:hover {
+  background: green;
+  
+}
+
+button:disabled {
+  
+  cursor: not-allowed;
+}
+
+/* Logout */
+.logout {
+  display: flex;
+  align-items: center;
+}
+
+.logout span {
+  margin: 8px;
+  color: #007bff; /* Match theme */
+  cursor: pointer;
+}
+
+.logout span:hover {
+  color: #0056b3;
+}
+
+/* Error message */
+.error {
+  color: #ff4d4f;
+  background: #ffecec;
+  border: 1px solid #ff4d4f;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.votes_comment_count{
+ display: flex;
+ justify-content: space-between;
+ font-size: 0px ;
+ margin: 8px 0px 8px;
+}
+
+.like_cmt{
+  margin-top: 8px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.like_cmt button{
+  background: transparent;
+  color: #333;
+  
+}
+.like_cmt button:hover{
+  background: whitesmoke;
+  color: #333;
+}
+.comments-section {
+  margin-top: 20px;
+  background: #f7f7f7;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.comment {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 10px;
+  height: 60px;
+  resize: none;
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 8px;
+  border-radius: 10px;
+}
+ .vote button span{
+  text-align: center;
+ 
+ }
+ 
+.write_cmt{
+  display: flex;
+}
+.write_cmt button{
+background: transparent;
+color: #333;
+}
+.write_cmt button:hover{
+cursor: pointer;
+color: green;
+}
+.heading_cmt{
+  margin: 10px 0px 10px 0px;
+  
+}
+.scrollable-cmt {
+  max-height: 200px; /* You can adjust this value */
+  overflow-y: auto;
+  margin-top:10px ;
+  margin-left: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 10px;
+}
+
+.back {
+  background: white;
+  
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  width:fit-content;
+  height: fit-content;
+  
+  
+}
+
+.back button {
+  background: transparent;
+  color: #222;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.back :hover {
+  background: whitesmoke;
+  color: #007bff;
+  border-radius: 50px;
+}
+
+.allpost{
+  justify-items: center;
+  border: 1px solid #999;
+  border-top:none ;
+  border-bottom: none;
+}
+.main-content{
+  
+  border: 1px solid #999;
+  border-top:none ;
+  border-bottom: none;
+}

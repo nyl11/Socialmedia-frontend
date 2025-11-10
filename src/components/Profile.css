@@ -1,0 +1,152 @@
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* makes it circular */
+  object-fit: cover;  /* ensures image fills the circle nicely */
+  border: 3px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-info h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.user-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.user-info p strong {
+  color: #111;
+}
+
+.profile-picture.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ccc;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+/* --- Buttons --- */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Default action buttons (Edit, etc.) */
+.action-btns {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.action-btns button {
+  background: #111;
+  color: #fff;
+}
+
+.action-btns button:hover {
+  background: whitesmoke;
+  color: #111;
+  border: 1px solid #111;
+}
+
+/* Edit form buttons (Save + Cancel) */
+.edit-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.edit-buttons button {
+  color: #111;
+  border: 1px solid gray;
+  background: whitesmoke;
+}
+
+/* Save button */
+.save-btn:hover {
+  background: #43a047; /* green */
+  color: white;
+  border: 1px solid #2e7d32;
+}
+.save-btn:active {
+  background: #1b5e20;
+  color: white;
+}
+
+/* Cancel button */
+.cancel-btn:hover {
+  background: #e53935; /* red */
+  color: white;
+  border: 1px solid #c62828;
+}
+.cancel-btn:active {
+  background: #8e0000;
+  color: white;
+}
+
+/* Status message */
+.status-msg {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.new_profilepic {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+
+  font-size: 15px;
+  font-weight: normal;
+  color: #333;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, font-weight 0.2s ease, color 0.2s ease;
+}
+
+.new_profilepic:hover {
+  transform: scale(1.05);   /* ✅ smooth zoom */
+  font-weight: bold;        /* ✅ bold text + icon */
+  color: #000;              /* ✅ darker text on hover */
+}
+
+.new_profilepic svg {
+  transition: transform 0.2s ease;
+}
+
+.new_profilepic:hover svg {
+  transform: scale(1.15);   /* ✅ icon zooms slightly more */
+}

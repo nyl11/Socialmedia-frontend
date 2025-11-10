@@ -1,0 +1,150 @@
+.create {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 70%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.create h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs */
+.create input[type="text"],
+.create textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.create input:focus,
+.create textarea:focus {
+  outline: none;
+  border-color: #111;
+  box-shadow: 0 0 3px rgba(0,0,0,0.15);
+}
+
+.create textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Image Upload */
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.add-image-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, font-weight 0.2s ease;
+}
+
+.add-image-btn:hover {
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+.image-preview-container {
+  margin-top: 10px;
+}
+
+.image-preview {
+  position: relative;
+  display: inline-block;
+  max-width: 200px;
+}
+
+.image-preview img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  width: 100%;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 28px;  /* ✅ fixed size */
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.remove-image-btn:hover {
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+/* Post action button */
+.action {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.action button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.action button:hover {
+  background: #333;
+}
+
+.action button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error message */
+.error {
+  color: #e53935;
+  background: #ffeaea;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+}

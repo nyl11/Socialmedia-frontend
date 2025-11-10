@@ -1,0 +1,30 @@
+.sort-toggle {
+  margin: 15px auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  gap: 10px; /* cleaner spacing */
+}
+
+.sort-button {
+  padding: 8px 18px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, border 0.2s ease;
+}
+
+.sort-button:hover {
+  background-color: #eee;   /* ✅ light hover */
+}
+
+.sort-button.active {
+  border: 2px solid #111;
+  background-color: #111;
+  color: #fff;
+  font-weight: 600;
+}
