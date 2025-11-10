@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { usePostsContext } from "../hooks/usePostsContext";
 
 const CommentSection = ({ postId, onCommentsChange }) => {
@@ -8,8 +8,8 @@ const CommentSection = ({ postId, onCommentsChange }) => {
 
   const { dispatch } = usePostsContext();
 
-  // Fetch comments
-  const fetchComments = async () => {
+  // ✅ Memoized fetchComments
+  const fetchComments = useCallback(async () => {
     try {
       const res = await fetch(`/api/posts/${postId}/comments`, {
         headers: { Authorization: `Bearer ${token}` }
@@ -29,7 +29,7 @@ const CommentSection = ({ postId, onCommentsChange }) => {
     } catch (err) {
       console.error("Fetch error:", err);
     }
-  };
+  }, [postId, token, onCommentsChange, dispatch]); // ✅ dependencies
 
   // Add new comment
   const handleAddComment = async (e) => {
@@ -61,40 +61,39 @@ const CommentSection = ({ postId, onCommentsChange }) => {
     }
   };
 
-  // Load comments on mount or when postId changes
+  // ✅ Now ESLint is happy
   useEffect(() => {
     fetchComments();
-  }, [postId]);
+  }, [fetchComments]);
 
   return (
-    
     <div className="comments-section">
       <div className="heading_cmt"><strong>Comments</strong></div>
-      <hr/>
-
-       <form onSubmit={handleAddComment}>
+      <hr />
+      <form onSubmit={handleAddComment}>
         <div className="write_cmt">
-        <textarea
-          value={newComment}
-          onChange={(e) => setNewComment(e.target.value)}
-          placeholder="Write a comment..."
-          required
-        />
-        <button type="submit">Post </button>
-      </div>
+          <textarea
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+            placeholder="Write a comment..."
+            required
+          />
+          <button type="submit">Post</button>
+        </div>
       </form>
       <div className="scrollable-cmt">
-      {comments.length > 0 ? (
-        comments.map((c, i) => (
-          <div key={i} className="comment">
-            <p><strong>User:</strong> {c.username}</p>
-            <p>{c.text}</p>
-          </div>
-        ))
-      ) : <p>No comments yet.</p>}
+        {comments.length > 0 ? (
+          comments.map((c, i) => (
+            <div key={i} className="comment">
+              <p><strong>User:</strong> {c.username}</p>
+              <p>{c.text}</p>
+            </div>
+          ))
+        ) : (
+          <p>No comments yet.</p>
+        )}
       </div>
-   </div>
-   
+    </div>
   );
 };
 
