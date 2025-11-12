@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:5000",
+  "proxy": "https://socialmedia-backend-2who.onrender.com",
   "name": "client",
   "version": "0.1.0",
   "private": true,
